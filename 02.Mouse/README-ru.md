@@ -3,7 +3,7 @@
 
 | < Назад | Начало | Далее > |
 |-|-|-|
-| [01. Цвет фона][01.BackgroundColor] | [Самоучители][index] | [03. Сфера][03.Sphere] |
+| [01. Цвет фона][01.BackgroundColor] | [Самоучители][index] | [03. Сферы][03.Spheres] |
 
 ## 02. Мышь
 
@@ -34,7 +34,7 @@ mouse.pressedButtonsChanged:addCallback(
 ```
 **[Запустить в `ogse`][run-buttons]**
 
-Давайте взглянем на использованный нами API:
+Давайте взглянем на новый использованный нами API:
 
 * `main.application.mouse` (экземпляр) позволяет получить текущие свойства
 мыши (пальца) вроде позиции, нажатых кнопок мыши и подписаться на их
@@ -51,6 +51,9 @@ mouse.pressedButtonsChanged:addCallback(
             end
         )
         ```
+* `core` (пространство имён) содержит функциональность, используемую во всём приложении
+* `core.Reporter` (класс) реализует [шаблон "Издатель-подписчик"][pub-sub-pattern] для упрощения циркуляции сообщений между независимыми частями приложения
+* `core.Reporter:addCallback()` (метод) позволяет подписаться на все сообщения от конкретного экземпляра `core.Reporter`
 
 **Замечания**:
 
@@ -117,13 +120,14 @@ mouse.pressedButtonsChanged:addCallback(
 
 | < Назад | Начало | Далее > |
 |-|-|-|
-| [01. Цвет фона][01.BackgroundColor] | [Самоучители][index] | [03. Сфера][03.Sphere] |
+| [01. Цвет фона][01.BackgroundColor] | [Самоучители][index] | [03. Сферы][03.Spheres] |
 
 [en]: README.md
 
 [index]: ../README-ru.md
 [01.BackgroundColor]: ../01.BackgroundColor/README-ru.md
-[03.Sphere]: ../03.Sphere/README-ru.md
+[03.Spheres]: ../03.Spheres/README-ru.md
 
+[pub-sub-pattern]: https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern
 [run-buttons]: https://ogstudio.github.io/ogse/?base64code=bG9jYWwgbW91c2UgPSBtYWluLmFwcGxpY2F0aW9uLm1vdXNlCm1vdXNlLnByZXNzZWRCdXR0b25zQ2hhbmdlZDphZGRDYWxsYmFjaygKICAgIGZ1bmN0aW9uKCkKICAgICAgICBwcmludCgiTW91c2UgYnV0dG9ucyBoYXZlIGJlZW4gcHJlc3NlZCBvciByZWxlYXNlZCIpCiAgICAgICAgcHJpbnQoIlByZXNzZWQgYnV0dG9uczoiLCAjbW91c2UucHJlc3NlZEJ1dHRvbnMpCiAgICBlbmQKKQ==
 [run-toggle]: https://ogstudio.github.io/ogse/?base64code=bG9jYWwgREVGQVVMVF9DT0xPUiA9IHswLjIsIDAuMiwgMC40fQpsb2NhbCBQUkVTU0VEX0NPTE9SID0gezEuMCwgMC4wLCAwLjB9Cgpsb2NhbCBtb3VzZSA9IG1haW4uYXBwbGljYXRpb24ubW91c2UKbG9jYWwgY2FtZXJhID0gbWFpbi5hcHBsaWNhdGlvbi5jYW1lcmEKCm1vdXNlLnByZXNzZWRCdXR0b25zQ2hhbmdlZDphZGRDYWxsYmFjaygKICAgIGZ1bmN0aW9uKCkKICAgICAgICBpZiAoI21vdXNlLnByZXNzZWRCdXR0b25zID4gMCkKICAgICAgICB0aGVuCiAgICAgICAgICAgIGNhbWVyYS5jbGVhckNvbG9yID0gUFJFU1NFRF9DT0xPUgogICAgICAgIGVsc2UKICAgICAgICAgICAgY2FtZXJhLmNsZWFyQ29sb3IgPSBERUZBVUxUX0NPTE9SCiAgICAgICAgZW5kCiAgICBlbmQKKQ==

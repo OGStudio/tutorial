@@ -3,7 +3,7 @@
 
 | < Back | Index | Next > |
 |-|-|-|
-| [01. Background color][01.BackgroundColor] | [Tutorials][index] | [03. Sphere][03.Sphere] |
+| [01. Background color][01.BackgroundColor] | [Tutorials][index] | [03. Spheres][03.Spheres] |
 
 ## 02. Mouse
 
@@ -34,7 +34,7 @@ mouse.pressedButtonsChanged:addCallback(
 ```
 **[Run in `ogse`][run-buttons]**
 
-Let's see into API we used:
+Let's see into API we introduced:
 
 * `main.application.mouse` instance lets you get current mouse (finger)
 properties like position, pressed mouse buttons and subscribe to changes of
@@ -51,6 +51,9 @@ or released
             end
         )
         ```
+* `core` namespace hosts functionality used throughout whole application
+* `core.Reporter` class implements [Publish-subscribe pattern][pub-sub-pattern] to simplify event circulation among independent application parts
+* `core.Reporter:addCallback()` method allows one to subscribe to all notifications of a specific `core.Reporter` instance
 
 **Notes**:
 
@@ -119,13 +122,14 @@ background color.
 
 | < Back | Index | Next > |
 |-|-|-|
-| [01. Background color][01.BackgroundColor] | [Tutorials][index] | [03. Sphere][03.Sphere] |
+| [01. Background color][01.BackgroundColor] | [Tutorials][index] | [03. Spheres][03.Spheres] |
 
 [ru]: README-ru.md
 
 [index]: ../README.md
 [01.BackgroundColor]: ../01.BackgroundColor/README.md
-[03.Sphere]: ../03.Sphere/README.md
+[03.Spheres]: ../03.Spheres/README.md
 
+[pub-sub-pattern]: https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern
 [run-buttons]: https://ogstudio.github.io/ogse/?base64code=bG9jYWwgbW91c2UgPSBtYWluLmFwcGxpY2F0aW9uLm1vdXNlCm1vdXNlLnByZXNzZWRCdXR0b25zQ2hhbmdlZDphZGRDYWxsYmFjaygKICAgIGZ1bmN0aW9uKCkKICAgICAgICBwcmludCgiTW91c2UgYnV0dG9ucyBoYXZlIGJlZW4gcHJlc3NlZCBvciByZWxlYXNlZCIpCiAgICAgICAgcHJpbnQoIlByZXNzZWQgYnV0dG9uczoiLCAjbW91c2UucHJlc3NlZEJ1dHRvbnMpCiAgICBlbmQKKQ==
 [run-toggle]: https://ogstudio.github.io/ogse/?base64code=bG9jYWwgREVGQVVMVF9DT0xPUiA9IHswLjIsIDAuMiwgMC40fQpsb2NhbCBQUkVTU0VEX0NPTE9SID0gezEuMCwgMC4wLCAwLjB9Cgpsb2NhbCBtb3VzZSA9IG1haW4uYXBwbGljYXRpb24ubW91c2UKbG9jYWwgY2FtZXJhID0gbWFpbi5hcHBsaWNhdGlvbi5jYW1lcmEKCm1vdXNlLnByZXNzZWRCdXR0b25zQ2hhbmdlZDphZGRDYWxsYmFjaygKICAgIGZ1bmN0aW9uKCkKICAgICAgICBpZiAoI21vdXNlLnByZXNzZWRCdXR0b25zID4gMCkKICAgICAgICB0aGVuCiAgICAgICAgICAgIGNhbWVyYS5jbGVhckNvbG9yID0gUFJFU1NFRF9DT0xPUgogICAgICAgIGVsc2UKICAgICAgICAgICAgY2FtZXJhLmNsZWFyQ29sb3IgPSBERUZBVUxUX0NPTE9SCiAgICAgICAgZW5kCiAgICBlbmQKKQ==

@@ -34,18 +34,20 @@ run code samples.
 
 **Note**: the course is in development, so the list of tutorials is not yet final.
 
-| Tutorial | Description | Estimated completion time |
-|-|-|-|
-| [01. Background color][01.BackgroundColor] | Set background color | 5 minutes |
-| [02. Mouse][02.Mouse] | Set background color on mouse button press | 5 minutes |
-| [03. Sphere][03.Sphere] | Display a sphere | 5 minutes |
+| Tutorial | Description | Estimated completion time | Introduced API |
+|-|-|-|-|
+| [01. Background color][01.BackgroundColor] | Set background color | 5 minutes | <ol><li>`main`</li><li>`main.application`</li><li>`main.application.camera`</li><li>`main.application.camera.clearColor`</li><ol> |
+| [02. Mouse][02.Mouse] | Set background color on mouse button press | 5 minutes | <ol><li>`main.application.mouse`</li><li>`main.application.mouse.pressedButtons`</li><li>`main.application.mouse.pressedButtonsChanged`</li><li>`core`</li><li>`core.Reporter`</li><li>`core.Reporter:addCallback()`</li></ol> |
+| [03. Spheres][03.Spheres] | Display spheres | 10 minutes | <ol> <li>`main.application.nodes`</li> <li>`main.application.nodes:createSphere()`</li> <li>`main.application.nodes:node()`</li> <li>`scene`</li> <li>`scene.Node:addChild()`</li> <li>`scene.Node.position`</li> <li>`main.application.camera.position`</li> <li>`main.application.camera.rotation`</li> </ol> |
+| [04. Node selection][04.Selection] | Select spheres | 10 minutes | <ol> <li>`scene.Node:setMask()`</li> <li>`main.application.camera:nodeAtPosition()`</li> <li>`scene.Node.__name`</li> </ol> |
 
 [ru]: README-ru.md
 
 [education]: http://opengamestudio.org/pages/education.html
 [01.BackgroundColor]: 01.BackgroundColor/README.md
 [02.Mouse]: 02.Mouse/README.md
-[03.Sphere]: 03.Sphere/README.md
+[03.Spheres]: 03.Spheres/README.md
+[04.Selection]: 04.Selection/README.md
 
 [screen-editor]: ogse.png
 [webgl]: https://get.webgl.org
